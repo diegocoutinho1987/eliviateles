@@ -171,7 +171,7 @@ body {
     .hero {
         min-height: calc(100vh - 60px);
         /* Posiciona a imagem mais para o centro/direita para enquadrar a Elívia perfeitamente no celular */
-        background-position: 65% center;
+        background-position: 67% center;
         /* Gradiente escuro de cima para baixo no mobile para leitura perfeita */
         background-image: linear-gradient(
                             to bottom, 
