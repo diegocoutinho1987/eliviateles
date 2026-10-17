@@ -235,7 +235,7 @@ body {
     line-height: 1.8;
 }
 
-/* ================= ESPECIALIDADES / SERVIÇOS ================= */
+/* ================= ESPECIALIDADES (GRID DE 3 COLUNAS) ================= */
 .projetos {
     padding: 5rem 1.5rem;
     background-color: var(--cor-bg);
@@ -250,7 +250,7 @@ body {
 
 .projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas em desktop */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -263,6 +263,8 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .projetos-card:hover {
@@ -272,10 +274,14 @@ body {
 
 .projetos-card-conteudo {
     padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .projetos-titulo-card {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: #1e293b;
     margin-bottom: 0.75rem;
     font-weight: 700;
@@ -284,7 +290,7 @@ body {
 .projetos-descricao {
     color: #64748b;
     line-height: 1.6;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
 }
 
 /* ================= DEPOIMENTOS ================= */
@@ -455,7 +461,13 @@ body {
     font-size: 0.8rem;
 }
 
-/* ================= MEDIA QUERIES (MOBILE) ================= */
+/* ================= MEDIA QUERIES (MOBILE E RESPONSIVIDADE) ================= */
+@media (max-width: 968px) {
+    .projetos-caixa {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
 @media (max-width: 768px) {
     .logo-imagem {
         height: 34px;
@@ -537,6 +549,10 @@ body {
     .btn-whatsapp-hero {
         width: 100%;
         padding: 0.95rem 1rem;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr; /* 1 coluna no celular para excelente leitura */
     }
 
     .footer-container {
