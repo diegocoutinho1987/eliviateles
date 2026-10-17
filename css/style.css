@@ -211,31 +211,77 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* ================= SOBRE ================= */
+/* ================= SEÇÃO SOBRE (LAYOUT 2 COLUNAS IGUAL AO ANEXO) ================= */
 .sobre {
     padding: 5rem 1.5rem;
-    background-color: #ffffff;
+    background-color: #fcf8ff; /* Tom suave de lilás como na referência */
 }
 
 .sobre-container {
-    max-width: 800px;
+    max-width: 1150px;
     margin: 0 auto;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: center;
 }
 
 .sobre-titulo {
     font-size: clamp(1.8rem, 3vw, 2.3rem);
-    color: #1e293b;
+    color: #8b5cf6; /* Roxo suave similar ao modelo */
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.sobre-texto p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.7;
     margin-bottom: 1.25rem;
 }
 
-.sobre-paragrafo {
-    font-size: 1.1rem;
-    color: #475569;
-    line-height: 1.8;
+.sobre-texto strong {
+    color: #1e293b;
 }
 
-/* ================= ESPECIALIDADES (GRID DE 3 COLUNAS) ================= */
+.sobre-assinatura {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-assinatura strong {
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.sobre-assinatura span {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.sobre-assinatura .crefito {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.sobre-imagem-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-imagem {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    object-fit: cover;
+}
+
+/* ================= ESPECIALIDADES (GRID 3 COLUNAS) ================= */
 .projetos {
     padding: 5rem 1.5rem;
     background-color: var(--cor-bg);
@@ -250,7 +296,7 @@ body {
 
 .projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas em desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -461,10 +507,19 @@ body {
     font-size: 0.8rem;
 }
 
-/* ================= MEDIA QUERIES (MOBILE E RESPONSIVIDADE) ================= */
+/* ================= MEDIA QUERIES ================= */
 @media (max-width: 968px) {
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .sobre-imagem-box {
+        order: -1; /* Coloca a imagem no topo no mobile/tablet */
+    }
+
     .projetos-caixa {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -552,7 +607,7 @@ body {
     }
 
     .projetos-caixa {
-        grid-template-columns: 1fr; /* 1 coluna no celular para excelente leitura */
+        grid-template-columns: 1fr;
     }
 
     .footer-container {
@@ -563,10 +618,4 @@ body {
 
 @media (max-width: 380px) {
     .btn-texto-nav {
-        display: none;
-    }
-    .btn-whatsapp-nav {
-        padding: 0.45rem 0.6rem;
-        border-radius: 50%;
-    }
-}
+        display
