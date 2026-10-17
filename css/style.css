@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fonte oficial baseada no site da Elívia Teles (Inter com fallback otimizado) */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -294,7 +295,6 @@ body {
     font-weight: 500;
 }
 
-/* Grid: 3 colunas por padrão (Desktop) */
 .especialidades-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -303,7 +303,6 @@ body {
     margin: 0 auto;
 }
 
-/* Cards com bordas suaves e sombras idênticas à imagem */
 .especialidade-card {
     background: #ffffff;
     border-radius: 16px;
@@ -322,7 +321,6 @@ body {
     box-shadow: 0 15px 35px rgba(168, 114, 191, 0.12);
 }
 
-/* Ícone de diamante em um círculo com borda lilás */
 .especialidade-icone-wrap {
     width: 58px;
     height: 58px;
@@ -358,7 +356,6 @@ body {
     flex-grow: 1;
 }
 
-/* Botão Saiba Mais (Pílula) */
 .btn-saiba-mais {
     display: inline-block;
     padding: 0.55rem 1.6rem;
@@ -547,8 +544,6 @@ body {
 }
 
 /* ================= MEDIA QUERIES (RESPONSIVIDADE) ================= */
-
-/* Tablet: 2 Colunas */
 @media (max-width: 968px) {
     .sobre-container {
         grid-template-columns: 1fr;
@@ -565,7 +560,6 @@ body {
     }
 }
 
-/* Mobile: 1 Coluna */
 @media (max-width: 768px) {
     .logo-imagem {
         height: 34px;
@@ -648,7 +642,6 @@ body {
         padding: 0.95rem 1rem;
     }
 
-    /* Força 1 coluna única no mobile */
     .especialidades-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
