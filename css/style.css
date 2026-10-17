@@ -377,54 +377,150 @@ body {
     box-shadow: 0 4px 12px rgba(168, 114, 191, 0.25);
 }
 
-/* ================= DEPOIMENTOS ================= */
-.depoimentos {
+/* ================= DEPOIMENTOS GOOGLE (ESTILO REFERÊNCIA) ================= */
+.secao-depoimentos-google {
     padding: 5rem 1.5rem;
     background-color: #ffffff;
 }
 
-.depoimentos-titulo {
-    text-align: center;
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
-    margin-bottom: 3rem;
-    color: #1e293b;
-}
-
-.depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
+.depoimentos-google-container {
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.depoimento-card {
-    background: #faf5ff;
-    border: 1px solid #f3e8ff;
-    padding: 2rem;
-    border-radius: 16px;
+.depoimentos-google-titulo {
+    text-align: center;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+    color: #8b5cf6;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+}
+
+.depoimentos-google-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.google-review-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease;
 }
 
-.depoimento-texto {
-    font-style: italic;
-    color: #334155;
-    margin-bottom: 1.25rem;
-    font-size: 0.98rem;
+.google-review-card:hover {
+    transform: translateY(-4px);
 }
 
-.depoimento-autor {
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatar-d {
+    background-color: #795548;
+}
+
+.avatar-amanda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-yara {
+    background-color: #e91e63;
+}
+
+.review-user-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.review-author-name {
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--roxo-principal);
+    color: #212529;
+}
+
+.review-time {
+    font-size: 0.78rem;
+    color: #6c757d;
+}
+
+.google-logo-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.review-stars {
+    color: #fbbc04;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    font-size: 9px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.review-text {
     font-size: 0.9rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.leia-mais {
+    color: #6c757d;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.leia-mais:hover {
+    color: #212529;
+    text-decoration: underline;
 }
 
 /* ================= COMO FUNCIONA MEU ATENDIMENTO ================= */
 .secao-funcionamento {
     padding: 5rem 1.5rem;
-    background-color: #935ba7; /* Fundo roxo da página de referência */
+    background-color: #935ba7;
 }
 
 .funcionamento-wrapper {
@@ -459,7 +555,6 @@ body {
     align-items: flex-start;
 }
 
-/* Estilo para os blocos roxos preenchidos */
 .funcionamento-card.roxo {
     background-color: #935ba7;
     color: #ffffff;
@@ -477,7 +572,6 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Estilo para os blocos brancos com borda */
 .funcionamento-card.branco {
     background-color: #ffffff;
     border: 1.5px solid #f1e5f5;
@@ -527,8 +621,6 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: linear-gradient(to right, #4db6ac, #26a69a);
-    background-color: #38bdf8; /* Fallback */
     background-image: linear-gradient(135deg, #4ac3bc 0%, #2bb8ab 100%);
     color: #ffffff;
     padding: 0.95rem 2.2rem;
@@ -683,6 +775,11 @@ body {
 
     .especialidades-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .depoimentos-google-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
