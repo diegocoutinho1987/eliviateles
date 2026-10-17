@@ -220,7 +220,8 @@ body {
 }
 
 .sobre-titulo {
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
     color: var(--roxo-principal);
     margin-bottom: 1.5rem;
     font-weight: 700;
