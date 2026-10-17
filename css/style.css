@@ -198,7 +198,7 @@ body {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* ================= SEÇÃO SOBRE (FUNDO BRANCO PURO) ================= */
+/* ================= SEÇÃO SOBRE ================= */
 .secao-sobre {
     padding: 5rem 1.5rem;
     background-color: #ffffff !important;
@@ -269,62 +269,113 @@ body {
     object-fit: cover;
 }
 
-/* ================= SEÇÃO ESPECIALIDADES (GRID 3 COLUNAS) ================= */
+/* ================= SEÇÃO ESPECIALIDADES (ESTILO IGUAL À IMAGEM) ================= */
 .secao-especialidades {
     padding: 5rem 1.5rem;
-    background-color: var(--cor-bg);
+    background-color: #faf8fd;
+}
+
+.especialidades-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
 }
 
 .especialidades-titulo {
-    text-align: center;
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
-    margin-bottom: 3rem;
-    color: #1e293b;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+    color: #a872bf;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
+.especialidades-subtitulo {
+    font-size: 0.82rem;
+    color: #64748b;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+}
+
+/* Grid: 3 colunas por padrão (Desktop) */
 .especialidades-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 1.75rem;
+    max-width: 1050px;
     margin: 0 auto;
 }
 
+/* Cards com bordas suaves e sombras idênticas à imagem */
 .especialidade-card {
     background: #ffffff;
     border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 2.25rem 1.75rem 2rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(168, 114, 191, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(235, 222, 243, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .especialidade-card:hover {
-    box-shadow: 0 12px 20px -3px rgba(147, 51, 234, 0.15);
     transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(168, 114, 191, 0.12);
 }
 
-.especialidade-conteudo {
-    padding: 2rem;
-    flex-grow: 1;
+/* Ícone de diamante em um círculo com borda lilás */
+.especialidade-icone-wrap {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1.5px solid #d8b4e2;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+}
+
+.especialidade-icone {
+    width: 26px;
+    height: 26px;
+    stroke: #a872bf;
 }
 
 .especialidade-titulo-card {
-    font-size: 1.2rem;
-    color: #1e293b;
-    margin-bottom: 0.75rem;
+    font-size: 0.88rem;
     font-weight: 700;
+    color: #334155;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .especialidade-descricao {
+    font-size: 0.88rem;
     color: #64748b;
     line-height: 1.6;
-    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+}
+
+/* Botão Saiba Mais (Pílula) */
+.btn-saiba-mais {
+    display: inline-block;
+    padding: 0.55rem 1.6rem;
+    border-radius: 50px;
+    border: 1.5px solid #a872bf;
+    color: #a872bf;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    background: transparent;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #a872bf;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(168, 114, 191, 0.25);
 }
 
 /* ================= DEPOIMENTOS ================= */
@@ -495,7 +546,9 @@ body {
     font-size: 0.8rem;
 }
 
-/* ================= MEDIA QUERIES ================= */
+/* ================= MEDIA QUERIES (RESPONSIVIDADE) ================= */
+
+/* Tablet: 2 Colunas */
 @media (max-width: 968px) {
     .sobre-container {
         grid-template-columns: 1fr;
@@ -508,9 +561,11 @@ body {
 
     .especialidades-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
+/* Mobile: 1 Coluna */
 @media (max-width: 768px) {
     .logo-imagem {
         height: 34px;
@@ -565,7 +620,6 @@ body {
 
     .hero {
         min-height: calc(100vh - 60px);
-        /* Posiciona a imagem exatamente em 67% no eixo X para centralizar perfeitamente a Elívia no mobile */
         background-position: 67% center;
         background-image: linear-gradient(
                             to bottom, 
@@ -580,6 +634,42 @@ body {
         text-align: center;
         margin: 0 auto;
         padding: 0 1rem;
-        background: transparent; /* Sem caixa translúcida */
+        background: transparent;
         backdrop-filter: none;
         border: none;
+    }
+
+    .hero-titulo {
+        font-size: 1.9rem;
+    }
+
+    .btn-whatsapp-hero {
+        width: 100%;
+        padding: 0.95rem 1rem;
+    }
+
+    /* Força 1 coluna única no mobile */
+    .especialidades-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .especialidade-card {
+        padding: 2rem 1.25rem 1.75rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn-texto-nav {
+        display: none;
+    }
+    .btn-whatsapp-nav {
+        padding: 0.45rem 0.6rem;
+        border-radius: 50%;
+    }
+}
