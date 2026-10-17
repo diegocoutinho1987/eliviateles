@@ -12,9 +12,12 @@ html {
 :root {
     --verde-whatsapp: #25d366;
     --verde-whatsapp-hover: #1ebd5a;
-    --roxo-principal: #9333ea;
+    /* Paleta de cores oficial extraída de eliviateles.com.br */
+    --roxo-principal: #935ba7; 
+    --roxo-escuro: #7d498f;
+    --lilás-suave: #faf8fd;
     --texto-menu: #64748b;
-    --texto-ativo: #9333ea;
+    --texto-ativo: #935ba7;
     --cor-bg: #f8fafc;
 }
 
@@ -218,7 +221,7 @@ body {
 
 .sobre-titulo {
     font-size: clamp(1.8rem, 3vw, 2.3rem);
-    color: #8b5cf6;
+    color: var(--roxo-principal);
     margin-bottom: 1.5rem;
     font-weight: 700;
     text-align: center;
@@ -268,14 +271,14 @@ body {
     max-width: 480px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 10px 30px rgba(147, 91, 167, 0.15);
     object-fit: cover;
 }
 
 /* ================= SEÇÃO ESPECIALIDADES ================= */
 .secao-especialidades {
     padding: 5rem 1.5rem;
-    background-color: #faf8fd;
+    background-color: var(--lilás-suave);
 }
 
 .especialidades-header {
@@ -285,7 +288,7 @@ body {
 
 .especialidades-titulo {
     font-size: clamp(1.8rem, 3.2vw, 2.3rem);
-    color: #a872bf;
+    color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -313,14 +316,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 10px 25px rgba(168, 114, 191, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 10px 25px rgba(147, 91, 167, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
     border: 1px solid rgba(235, 222, 243, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .especialidade-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(168, 114, 191, 0.12);
+    box-shadow: 0 15px 35px rgba(147, 91, 167, 0.12);
 }
 
 .especialidade-icone-wrap {
@@ -338,7 +341,7 @@ body {
 .especialidade-icone {
     width: 26px;
     height: 26px;
-    stroke: #a872bf;
+    stroke: var(--roxo-principal);
 }
 
 .especialidade-titulo-card {
@@ -362,8 +365,8 @@ body {
     display: inline-block;
     padding: 0.55rem 1.6rem;
     border-radius: 50px;
-    border: 1.5px solid #a872bf;
-    color: #a872bf;
+    border: 1.5px solid var(--roxo-principal);
+    color: var(--roxo-principal);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
@@ -372,12 +375,12 @@ body {
 }
 
 .btn-saiba-mais:hover {
-    background-color: #a872bf;
+    background-color: var(--roxo-principal);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(168, 114, 191, 0.25);
+    box-shadow: 0 4px 12px rgba(147, 91, 167, 0.25);
 }
 
-/* ================= DEPOIMENTOS GOOGLE (ESTILO REFERÊNCIA) ================= */
+/* ================= DEPOIMENTOS GOOGLE ================= */
 .secao-depoimentos-google {
     padding: 5rem 1.5rem;
     background-color: #ffffff;
@@ -391,7 +394,7 @@ body {
 .depoimentos-google-titulo {
     text-align: center;
     font-size: clamp(1.8rem, 3.2vw, 2.3rem);
-    color: #8b5cf6;
+    color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 3.5rem;
 }
@@ -520,7 +523,7 @@ body {
 /* ================= COMO FUNCIONA MEU ATENDIMENTO ================= */
 .secao-funcionamento {
     padding: 5rem 1.5rem;
-    background-color: #935ba7;
+    background-color: var(--roxo-principal);
 }
 
 .funcionamento-wrapper {
@@ -535,7 +538,7 @@ body {
 .funcionamento-titulo-principal {
     text-align: center;
     font-size: clamp(1.8rem, 3.2vw, 2.3rem);
-    color: #8b5cf6;
+    color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 3rem;
 }
@@ -556,7 +559,7 @@ body {
 }
 
 .funcionamento-card.roxo {
-    background-color: #935ba7;
+    background-color: var(--roxo-principal);
     color: #ffffff;
 }
 
@@ -580,7 +583,7 @@ body {
 }
 
 .funcionamento-card.branco .funcionamento-icone-box {
-    color: #935ba7;
+    color: var(--roxo-principal);
 }
 
 .funcionamento-card.branco h3 {
@@ -680,12 +683,12 @@ body {
 
 .contato-formulario-input:focus {
     border-color: var(--roxo-principal);
-    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.15);
+    box-shadow: 0 0 0 3px rgba(147, 91, 167, 0.15);
 }
 
 .contato-formulario-botao {
     color: #ffffff;
-    background: linear-gradient(to right, var(--roxo-principal), #7e22ce);
+    background: linear-gradient(to right, var(--roxo-principal), var(--roxo-escuro));
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
