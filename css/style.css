@@ -171,7 +171,7 @@ body {
     .hero {
         min-height: calc(100vh - 60px);
         /* Posiciona a imagem mais para o centro/direita para enquadrar a Elívia perfeitamente no celular */
-        background-position: 82% center;
+        background-position: 52% center;
         /* Gradiente escuro de cima para baixo no mobile para leitura perfeita */
         background-image: linear-gradient(
                             to bottom, 
@@ -189,12 +189,6 @@ body {
     .hero-conteudo {
         text-align: center;
         margin: 0 auto;
-        /* Caixa semi-transparente para dar legibilidade total ao texto sem cobrir a foto */
-        background: rgba(15, 23, 42, 0.35);
-        padding: 1.75rem 1.25rem;
-        border-radius: 16px;
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .hero-titulo {
