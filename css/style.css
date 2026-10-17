@@ -12,28 +12,29 @@ html {
 :root {
     --verde-whatsapp: #25d366;
     --verde-whatsapp-hover: #1ebd5a;
+    --roxo-principal: #9333ea;
     --texto-menu: #64748b;
-    --texto-ativo: #a855f7;
-    --roxo-logo: #9333ea;
+    --texto-ativo: #9333ea;
+    --cor-bg: #f8fafc;
 }
 
 body {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: var(--cor-bg);
+    color: #334155;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* ================= BARRA DE NAVEGAÇÃO (NAV) ================= */
+/* ================= NAV BAR ================= */
 .navegacao {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    padding: 0.6rem 1.25rem;
+    padding: 0.6rem 1.5rem;
 }
 
 .navegacao-container {
@@ -44,7 +45,6 @@ body {
     justify-content: space-between;
 }
 
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -52,22 +52,21 @@ body {
 }
 
 .logo-imagem {
-    height: 42px;
+    height: 40px;
     width: auto;
     max-width: 160px;
     object-fit: contain;
 }
 
-/* Menu de links (Desktop) */
 .menu {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .menu-link {
-    color: #64748b;
+    color: var(--texto-menu);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -76,10 +75,9 @@ body {
 
 .menu-link:hover,
 .menu-link.ativo {
-    color: #9333ea;
+    color: var(--texto-ativo);
 }
 
-/* Ações (Botão Whats + Hambúrguer) */
 .nav-acoes {
     display: flex;
     align-items: center;
@@ -90,7 +88,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background-color: #25d366;
+    background-color: var(--verde-whatsapp);
     color: #ffffff;
     padding: 0.5rem 1.1rem;
     border-radius: 50px;
@@ -99,13 +97,13 @@ body {
     font-size: 0.88rem;
     box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
     white-space: nowrap;
+    transition: background-color 0.2s ease;
 }
 
 .btn-whatsapp-nav:hover {
-    background-color: #1ebd5a;
+    background-color: var(--verde-whatsapp-hover);
 }
 
-/* Botão Hambúrguer oculto por padrão no desktop */
 .menu-hamburguer {
     display: none;
     flex-direction: column;
@@ -121,93 +119,20 @@ body {
 .menu-hamburguer span {
     width: 100%;
     height: 3px;
-    background-color: #9333ea;
+    background-color: var(--roxo-principal);
     border-radius: 3px;
     transition: all 0.3s linear;
 }
 
-/* ================= OTIMIZAÇÃO EXCLUSIVA PARA MOBILE (TELAS ATÉ 768px) ================= */
-@media (max-width: 768px) {
-    .logo-imagem {
-        height: 34px; /* Reduz ligeiramente a logo no celular para não estourar */
-        max-width: 135px;
-    }
-
-    .btn-whatsapp-nav {
-        padding: 0.45rem 0.85rem;
-        font-size: 0.8rem;
-    }
-
-    .menu-hamburguer {
-        display: flex; /* Exibe o botão de três listras */
-    }
-
-    /* Animação do botão hambúrguer ao clicar */
-    .menu-hamburguer.ativo span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-hamburguer.ativo span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-hamburguer.ativo span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    /* Menu colapsável em telas menores */
-    .menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        flex-direction: column;
-        gap: 0;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-        border-top: 1px solid #f1f5f9;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease-in-out, padding 0.35s ease;
-    }
-
-    .menu.aberto {
-        max-height: 300px; /* Abre o menu suavemente */
-        padding: 1rem 0;
-    }
-
-    .menu li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu-link {
-        display: block;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        border-bottom: 1px solid #f8fafc;
-    }
-}
-
-/* Para telas muito pequenas (abaixo de 380px) */
-@media (max-width: 380px) {
-    .btn-texto-nav {
-        display: none; /* Mantém apenas o ícone do WhatsApp para não encavalar com o hambúrguer */
-    }
-    .btn-whatsapp-nav {
-        padding: 0.45rem 0.6rem;
-        border-radius: 50%;
-    }
-}
-
-/* ================= HERO SECTION (DESKTOP E GERAL) ================= */
+/* ================= HERO SECTION ================= */
 .hero {
     min-height: 100vh;
     width: 100%;
-    margin-top: 60px; /* Altura da nav */
-    /* Gradiente leve para dar contraste ao texto + imagem de fundo */
+    margin-top: 60px;
     background: linear-gradient(
                   to right, 
-                  rgba(15, 23, 42, 0.75) 0%, 
-                  rgba(15, 23, 42, 0.4) 50%, 
+                  rgba(15, 23, 42, 0.8) 0%, 
+                  rgba(15, 23, 42, 0.45) 55%, 
                   rgba(15, 23, 42, 0.1) 100%
                 ),
                 url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp') no-repeat center right / cover;
@@ -224,23 +149,36 @@ body {
 }
 
 .hero-conteudo {
-    max-width: 550px;
+    max-width: 580px;
     color: #ffffff;
 }
 
-.hero-titulo {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 800;
-    line-height: 1.25;
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: #f3e8ff;
+}
+
+.hero-titulo {
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-descricao {
     font-size: clamp(1rem, 1.8vw, 1.15rem);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -250,179 +188,171 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    background-color: var(--verde-whatsapp, #25d366);
+    background-color: var(--verde-whatsapp);
     color: #ffffff;
     padding: 0.9rem 1.8rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* ================= AJUSTES EXCLUSIVOS PARA MOBILE ================= */
-@media (max-width: 768px) {
-    .hero {
-        min-height: calc(100vh - 60px);
-        /* Posiciona a imagem mais para o centro/direita para enquadrar a Elívia perfeitamente no celular */
-        background-position: 67% center;
-        /* Gradiente escuro de cima para baixo no mobile para leitura perfeita */
-        background-image: linear-gradient(
-                            to bottom, 
-                            rgba(15, 23, 42, 0.7) 0%, 
-                            rgba(15, 23, 42, 0.5) 60%, 
-                            rgba(15, 23, 42, 0.3) 100%
-                          ),
-                          url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp');
-    }
-
-    .hero-container {
-        padding: 2rem 1.25rem;
-    }
-
-    .hero-conteudo {
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .hero-titulo {
-        font-size: 2.85rem;
-        margin-bottom: 0.85rem;
-    }
-
-    .hero-descricao {
-        font-size: 0.98rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .btn-whatsapp-hero {
-        width: 100%; /* Botão em largura total para facilitar o clique com o polegar */
-        padding: 0.95rem 1rem;
-    }
+.btn-whatsapp-hero:hover {
+    background-color: var(--verde-whatsapp-hover);
+    transform: translateY(-2px);
 }
 
-/* Opcional: Garante legibilidade do texto sobre a imagem */
-.cabecalho-conteudo {
-    z-index: 2;
+.hero-subinfo {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.foto-perfil {
-    min-height: 100vh;
-}
-
-h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--primaria);
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.cabecalho-descricao {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    color: var(--claro);
-}
-
-/* Seção Sobre */
+/* ================= SOBRE ================= */
 .sobre {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
+    background-color: #ffffff;
+}
+
+.sobre-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .sobre-titulo {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--claro);
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.sobre-caixa {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 15px;
-    border: 1px solid var(--vidro);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    color: #1e293b;
+    margin-bottom: 1.25rem;
 }
 
 .sobre-paragrafo {
-    text-align: center;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
 }
 
-/* Seção Projetos */
+/* ================= ESPECIALIDADES / SERVIÇOS ================= */
 .projetos {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
+    background-color: var(--cor-bg);
 }
 
 .projetos-titulo {
     text-align: center;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 3rem;
+    color: #1e293b;
 }
 
 .projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .projetos-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--vidro);
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .projetos-card:hover {
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 12px 20px -3px rgba(147, 51, 234, 0.15);
     transform: translateY(-5px);
 }
 
-.projeto-imagem {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-}
-
 .projetos-card-conteudo {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .projetos-titulo-card {
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
 }
 
 .projetos-descricao {
-    color: rgba(226, 232, 240, 0.8);
-    line-height: 1.4;
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.98rem;
 }
 
-/* Seção Contato */
+/* ================= DEPOIMENTOS ================= */
+.depoimentos {
+    padding: 5rem 1.5rem;
+    background-color: #ffffff;
+}
+
+.depoimentos-titulo {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 3rem;
+    color: #1e293b;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.depoimento-card {
+    background: #faf5ff;
+    border: 1px solid #f3e8ff;
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.depoimento-texto {
+    font-style: italic;
+    color: #334155;
+    margin-bottom: 1.25rem;
+    font-size: 0.98rem;
+}
+
+.depoimento-autor {
+    font-weight: 700;
+    color: var(--roxo-principal);
+    font-size: 0.9rem;
+}
+
+/* ================= CONTATO ================= */
 .contato {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
+    background-color: var(--cor-bg);
 }
 
 .contato-titulo {
     text-align: center;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 2.5rem;
+    color: #1e293b;
 }
 
 .contato-formulario {
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    padding: 2rem 1.5rem;
-    border: 1px solid var(--vidro);
-    border-radius: 15px;
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .contato-formulario-grupo {
@@ -431,23 +361,24 @@ h1 {
 
 .contato-formulario-input {
     width: 100%;
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--vidro);
+    padding: 0.85rem;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
-    color: var(--claro);
+    color: #1e293b;
     outline: none;
     font-size: 1rem;
+    transition: border-color 0.2s;
 }
 
 .contato-formulario-input:focus {
-    border-color: var(--secundaria);
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    border-color: var(--roxo-principal);
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.15);
 }
 
 .contato-formulario-botao {
-    color: var(--claro);
-    background: linear-gradient(to right, var(--primaria), var(--secundaria));
+    color: #ffffff;
+    background: linear-gradient(to right, var(--roxo-principal), #7e22ce);
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
@@ -455,15 +386,15 @@ h1 {
     font-weight: bold;
     font-size: 1rem;
     width: 100%;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .contato-formulario-botao:hover {
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+    opacity: 0.95;
     transform: translateY(-2px);
 }
 
-/* Rodapé */
+/* ================= FOOTER ================= */
 .footer {
     background-color: #0f172a;
     color: #f8fafc;
@@ -524,26 +455,102 @@ h1 {
     font-size: 0.8rem;
 }
 
-/* Media Queries para Telas Maiores (Desktop / Tablet) */
-@media (min-width: 768px) {
-    .menu {
-        gap: 3rem;
+/* ================= MEDIA QUERIES (MOBILE) ================= */
+@media (max-width: 768px) {
+    .logo-imagem {
+        height: 34px;
+        max-width: 135px;
     }
 
-    .sobre, .projetos, .contato {
-        padding: 6rem 2rem;
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu-hamburguer.ativo span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-hamburguer.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburguer.ativo span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+        border-top: 1px solid #f1f5f9;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-in-out, padding 0.35s ease;
+    }
+
+    .menu.aberto {
+        max-height: 320px;
+        padding: 1rem 0;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-link {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid #f8fafc;
+    }
+
+    .hero {
+        min-height: calc(100vh - 60px);
+        background-position: 82% center;
+        background-image: linear-gradient(
+                            to bottom, 
+                            rgba(15, 23, 42, 0.75) 0%, 
+                            rgba(15, 23, 42, 0.55) 60%, 
+                            rgba(15, 23, 42, 0.4) 100%
+                          ),
+                          url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp');
+    }
+
+    .hero-conteudo {
+        text-align: center;
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.4);
+        padding: 1.75rem 1.25rem;
+        border-radius: 16px;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-titulo {
+        font-size: 1.75rem;
+    }
+
+    .btn-whatsapp-hero {
+        width: 100%;
+        padding: 0.95rem 1rem;
     }
 
     .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+        flex-direction: column;
+        text-align: center;
     }
+}
 
-    .footer-copyright {
-        border-top: none;
-        margin-top: 0;
-        padding-top: 0;
-        width: auto;
+@media (max-width: 380px) {
+    .btn-texto-nav {
+        display: none;
+    }
+    .btn-whatsapp-nav {
+        padding: 0.45rem 0.6rem;
+        border-radius: 50%;
     }
 }
