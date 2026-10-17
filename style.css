@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navegação */
+.navegacao {
+    position: fixed;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.9);
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.menu-link {
+    color: var(--claro);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--primaria), var(--secundaria));
+    transition: width 0.3s ease-in-out;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* Cabeçalho / Hero */
+.cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 6rem 1.5rem 2rem;
+    text-align: center;
+    
+    /* Define a imagem de fundo preenchendo toda a área */
+    background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)),
+                url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp') no-repeat center center / cover;
+}
+
+/* Opcional: Garante legibilidade do texto sobre a imagem */
+.cabecalho-conteudo {
+    z-index: 2;
+}
+
+.foto-perfil {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--primaria);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.cabecalho-descricao {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--claro);
+}
+
+/* Seção Sobre */
+.sobre {
+    padding: 4rem 1.5rem;
+}
+
+.sobre-titulo {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+/* Seção Projetos */
+.projetos {
+    padding: 4rem 1.5rem;
+}
+
+.projetos-titulo {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+}
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-5px);
+}
+
+.projeto-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projetos-card-conteudo {
+    padding: 1.5rem;
+}
+
+.projetos-titulo-card {
+    margin-bottom: 0.5rem;
+}
+
+.projetos-descricao {
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.4;
+}
+
+/* Seção Contato */
+.contato {
+    padding: 4rem 1.5rem;
+}
+
+.contato-titulo {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+}
+
+.contato-formulario {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--vidro);
+    border-radius: 15px;
+}
+
+.contato-formulario-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.contato-formulario-input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro);
+    border-radius: 8px;
+    color: var(--claro);
+    outline: none;
+    font-size: 1rem;
+}
+
+.contato-formulario-input:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.contato-formulario-botao {
+    color: var(--claro);
+    background: linear-gradient(to right, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contato-formulario-botao:hover {
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Rodapé */
+.footer {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 3rem 1.5rem 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.footer-info p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.footer-social a {
+    color: #94a3b8;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a:hover {
+    color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    margin-top: 1rem;
+    border-top: 1px solid #1e293b;
+    width: 100%;
+    padding-top: 1.5rem;
+}
+
+.footer-copyright p {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+/* Media Queries para Telas Maiores (Desktop / Tablet) */
+@media (min-width: 768px) {
+    .menu {
+        gap: 3rem;
+    }
+
+    .sobre, .projetos, .contato {
+        padding: 6rem 2rem;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-copyright {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+        width: auto;
+    }
+}
