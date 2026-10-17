@@ -12,7 +12,6 @@ html {
 :root {
     --verde-whatsapp: #25d366;
     --verde-whatsapp-hover: #1ebd5a;
-    /* Paleta de cores oficial extraída de eliviateles.com.br */
     --roxo-principal: #935ba7; 
     --roxo-escuro: #7d498f;
     --lilás-suave: #faf8fd;
@@ -220,8 +219,7 @@ body {
 }
 
 .sobre-titulo {
-    font-family: Montserrat, sans-serif;
-    font-size: 30px;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
     color: var(--roxo-principal);
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -288,8 +286,7 @@ body {
 }
 
 .especialidades-titulo {
-    font-family: Montserrat, sans-serif;
-    font-size: 30px;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
     color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -394,9 +391,8 @@ body {
 }
 
 .depoimentos-google-titulo {
-    font-family: Montserrat, sans-serif;
     text-align: center;
-    font-size: 30px;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
     color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 3.5rem;
@@ -540,8 +536,7 @@ body {
 
 .funcionamento-titulo-principal {
     text-align: center;
-    font-size: 30px;
-    font-family: Montserrat, sans-serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
     color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 3rem;
@@ -645,29 +640,43 @@ body {
     opacity: 0.95;
 }
 
-/* ================= CONTATO ================= */
+/* ================= CONTATO (DUAS COLUNAS NO DESKTOP) ================= */
 .contato {
     padding: 5rem 1.5rem;
     background-color: var(--cor-bg);
 }
 
+.contato-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.contato-coluna {
+    display: flex;
+    flex-direction: column;
+}
+
 .contato-titulo {
-    text-align: center;
-    font-size: 30px;
-    font-family: Montserrat, sans-serif;
-    margin-bottom: 2.5rem;
-    color: #1e293b;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    margin-bottom: 1.5rem;
+    color: var(--roxo-principal);
+    font-weight: 700;
 }
 
 .contato-formulario {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
     background: #ffffff;
     padding: 2.5rem 2rem;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contato-formulario-grupo {
@@ -707,6 +716,75 @@ body {
 .contato-formulario-botao:hover {
     opacity: 0.95;
     transform: translateY(-2px);
+}
+
+/* Estilo do Card do Mapa */
+.mapa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mapa-embed-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.mapa-overlay-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.btn-abrir-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-abrir-maps:hover {
+    background-color: #f1f5f9;
+    color: var(--roxo-principal);
+}
+
+.mapa-info-box {
+    background-color: #5593c4; /* Tom azulado da referência do mapa */
+    background: linear-gradient(135deg, #4da3d8 0%, #3a82b4 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+}
+
+.mapa-endereco, .mapa-telefone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 500;
 }
 
 /* ================= FOOTER ================= */
@@ -794,6 +872,11 @@ body {
     .funcionamento-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+
+    .contato-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 }
 
