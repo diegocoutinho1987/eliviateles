@@ -48,32 +48,13 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
 }
 
-.logo-icone {
-    width: 32px;
-    height: 32px;
-}
-
-.logo-texto {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-nome {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--roxo-logo);
-    line-height: 1.1;
-}
-
-.logo-subtitulo {
-    font-size: 0.65rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.logo-imagem {
+    height: 45px; /* Altura ideal para a barra de navegação */
+    width: auto;  /* Mantém a proporção original */
+    display: block;
 }
 
 /* Menu Links */
