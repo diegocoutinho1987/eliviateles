@@ -10,77 +10,198 @@ html {
 }
 
 :root {
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --claro: #e2e8f0;
-    --vidro: rgba(255, 255, 255, 0.1);
+    --verde-whatsapp: #25d366;
+    --verde-whatsapp-hover: #1ebd5a;
+    --texto-menu: #64748b;
+    --texto-ativo: #a855f7;
+    --roxo-logo: #9333ea;
 }
 
 body {
-    background-color: var(--escuro);
-    color: var(--claro);
+    background-color: #ffffff;
+    color: #333333;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Navegação */
+/* ================= NAV BAR ================= */
 .navegacao {
     position: fixed;
     top: 0;
-    background-color: rgba(15, 23, 42, 0.9);
+    left: 0;
     width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    padding: 1rem 1.5rem;
-    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
 }
 
+.navegacao-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logo-icone {
+    width: 32px;
+    height: 32px;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-nome {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--roxo-logo);
+    line-height: 1.1;
+}
+
+.logo-subtitulo {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Menu Links */
 .menu {
     display: flex;
-    justify-content: center;
     list-style: none;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 1.75rem;
+    align-items: center;
 }
 
 .menu-link {
-    color: var(--claro);
+    color: var(--texto-menu);
     text-decoration: none;
+    font-size: 0.95rem;
     font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
+    transition: color 0.2s ease;
 }
 
-.menu-link::after {
-    content: '';
-    height: 2px;
-    width: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to right, var(--primaria), var(--secundaria));
-    transition: width 0.3s ease-in-out;
+.menu-link:hover,
+.menu-link.ativo {
+    color: var(--texto-ativo);
 }
 
-.menu-link:hover::after {
-    width: 100%;
+.seta {
+    font-size: 0.8rem;
 }
 
-/* Cabeçalho / Hero */
-.cabecalho {
-    position: relative;
+/* Botão WhatsApp Nav */
+.btn-whatsapp-nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--verde-whatsapp);
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp-nav:hover {
+    background-color: var(--verde-whatsapp-hover);
+    transform: translateY(-1px);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
     min-height: 100vh;
     width: 100%;
-    padding: 6rem 1.5rem 2rem;
-    text-align: center;
-    
-    /* Define a imagem de fundo preenchendo toda a área */
-    background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)),
-                url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp') no-repeat center center / cover;
+    margin-top: 60px; /* Compensa a barra fixa */
+    background: url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp') no-repeat center right / cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.hero-conteudo {
+    max-width: 550px;
+    color: #ffffff;
+}
+
+.hero-titulo {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hero-descricao {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão WhatsApp Hero */
+.btn-whatsapp-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--verde-whatsapp);
+    color: #ffffff;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp-hero:hover {
+    background-color: var(--verde-whatsapp-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Em telas pequenas, você pode implementar um menu hambúrguer */
+    }
+
+    .hero {
+        background-position: 75% center; /* Ajusta o foco da imagem no mobile */
+    }
+
+    .hero-conteudo {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .btn-whatsapp-hero {
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 /* Opcional: Garante legibilidade do texto sobre a imagem */
