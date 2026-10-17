@@ -211,10 +211,10 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* ================= SEÇÃO SOBRE (LAYOUT 2 COLUNAS IGUAL AO ANEXO) ================= */
+/* ================= SEÇÃO SOBRE (FUNDO BRANCO E TÍTULO CENTRALIZADO) ================= */
 .sobre {
     padding: 5rem 1.5rem;
-    background-color: #ffffff; /* Tom suave de lilás como na referência */
+    background-color: #ffffff; /* Fundo branco puro */
 }
 
 .sobre-container {
@@ -228,9 +228,10 @@ body {
 
 .sobre-titulo {
     font-size: clamp(1.8rem, 3vw, 2.3rem);
-    color: #8b5cf6; /* Roxo suave similar ao modelo */
+    color: #8b5cf6;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-align: center; /* Centraliza o título "Sou Elívia Teles" */
 }
 
 .sobre-texto p {
@@ -515,107 +516,4 @@ body {
     }
 
     .sobre-imagem-box {
-        order: -1; /* Coloca a imagem no topo no mobile/tablet */
-    }
-
-    .projetos-caixa {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .logo-imagem {
-        height: 34px;
-        max-width: 135px;
-    }
-
-    .menu-hamburguer {
-        display: flex;
-    }
-
-    .menu-hamburguer.ativo span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-hamburguer.ativo span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-hamburguer.ativo span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    .menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        flex-direction: column;
-        gap: 0;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-        border-top: 1px solid #f1f5f9;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease-in-out, padding 0.35s ease;
-    }
-
-    .menu.aberto {
-        max-height: 320px;
-        padding: 1rem 0;
-    }
-
-    .menu li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu-link {
-        display: block;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        border-bottom: 1px solid #f8fafc;
-    }
-
-    .hero {
-        min-height: calc(100vh - 60px);
-        background-position: 82% center;
-        background-image: linear-gradient(
-                            to bottom, 
-                            rgba(15, 23, 42, 0.75) 0%, 
-                            rgba(15, 23, 42, 0.55) 60%, 
-                            rgba(15, 23, 42, 0.4) 100%
-                          ),
-                          url('../img/Elivia-Teles-Consultora-de-Amamentacao-Picos-PI.webp');
-    }
-
-    .hero-conteudo {
-        text-align: center;
-        margin: 0 auto;
-        background: rgba(15, 23, 42, 0.4);
-        padding: 1.75rem 1.25rem;
-        border-radius: 16px;
-        backdrop-filter: blur(6px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .hero-titulo {
-        font-size: 1.75rem;
-    }
-
-    .btn-whatsapp-hero {
-        width: 100%;
-        padding: 0.95rem 1rem;
-    }
-
-    .projetos-caixa {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 380px) {
-    .btn-texto-nav {
-        display
+        order: -1;
