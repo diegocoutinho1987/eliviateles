@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Fonte oficial baseada no site da Elívia Teles (Inter com fallback otimizado) */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -155,7 +154,7 @@ body {
 }
 
 .hero-titulo {
-    font-family: ABeeZee, sans-serif;
+    font-family: 'ABeeZee', sans-serif; /* Fonte ABeeZee solicitada */
     font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     font-weight: 800;
     line-height: 1.2;
@@ -164,7 +163,7 @@ body {
 }
 
 .hero-descricao {
-    font-family: ABeeZee, sans-serif;
+    font-family: 'ABeeZee', sans-serif; /* Fonte ABeeZee solicitada */
     font-size: clamp(1.05rem, 1.8vw, 1.2rem);
     font-weight: 400;
     line-height: 1.6;
@@ -174,6 +173,7 @@ body {
 }
 
 .btn-whatsapp-hero {
+    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat solicitada */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -272,7 +272,7 @@ body {
     object-fit: cover;
 }
 
-/* ================= SEÇÃO ESPECIALIDADES (ESTILO IGUAL À IMAGEM) ================= */
+/* ================= SEÇÃO ESPECIALIDADES ================= */
 .secao-especialidades {
     padding: 5rem 1.5rem;
     background-color: #faf8fd;
