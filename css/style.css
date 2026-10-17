@@ -288,7 +288,8 @@ body {
 }
 
 .especialidades-titulo {
-    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
     color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 0.5rem;
