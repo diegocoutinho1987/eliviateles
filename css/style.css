@@ -540,7 +540,8 @@ body {
 
 .funcionamento-titulo-principal {
     text-align: center;
-    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+    font-size: 30px;
+    font-family: Montserrat, sans-serif;
     color: var(--roxo-principal);
     font-weight: 700;
     margin-bottom: 3rem;
