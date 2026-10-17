@@ -154,7 +154,7 @@ body {
 }
 
 .hero-titulo {
-    font-family: 'ABeeZee', sans-serif; /* Fonte ABeeZee solicitada */
+    font-family: 'ABeeZee', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     font-weight: 800;
     line-height: 1.2;
@@ -163,7 +163,7 @@ body {
 }
 
 .hero-descricao {
-    font-family: 'ABeeZee', sans-serif; /* Fonte ABeeZee solicitada */
+    font-family: 'ABeeZee', sans-serif;
     font-size: clamp(1.05rem, 1.8vw, 1.2rem);
     font-weight: 400;
     line-height: 1.6;
@@ -173,7 +173,7 @@ body {
 }
 
 .btn-whatsapp-hero {
-    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat solicitada */
+    font-family: 'Montserrat', sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -421,6 +421,131 @@ body {
     font-size: 0.9rem;
 }
 
+/* ================= COMO FUNCIONA MEU ATENDIMENTO ================= */
+.secao-funcionamento {
+    padding: 5rem 1.5rem;
+    background-color: #935ba7; /* Fundo roxo da página de referência */
+}
+
+.funcionamento-wrapper {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3.5rem 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.funcionamento-titulo-principal {
+    text-align: center;
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+    color: #8b5cf6;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.funcionamento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.funcionamento-card {
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* Estilo para os blocos roxos preenchidos */
+.funcionamento-card.roxo {
+    background-color: #935ba7;
+    color: #ffffff;
+}
+
+.funcionamento-card.roxo .funcionamento-icone-box {
+    color: #ffffff;
+}
+
+.funcionamento-card.roxo h3 {
+    color: #ffffff;
+}
+
+.funcionamento-card.roxo p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Estilo para os blocos brancos com borda */
+.funcionamento-card.branco {
+    background-color: #ffffff;
+    border: 1.5px solid #f1e5f5;
+    box-shadow: 0 4px 12px rgba(147, 91, 167, 0.04);
+    color: #334155;
+}
+
+.funcionamento-card.branco .funcionamento-icone-box {
+    color: #935ba7;
+}
+
+.funcionamento-card.branco h3 {
+    color: #334155;
+}
+
+.funcionamento-card.branco p {
+    color: #64748b;
+}
+
+.funcionamento-icone-box {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.funcionamento-texto-box h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.funcionamento-texto-box p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.funcionamento-btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-agende-consulta {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(to right, #4db6ac, #26a69a);
+    background-color: #38bdf8; /* Fallback */
+    background-image: linear-gradient(135deg, #4ac3bc 0%, #2bb8ab 100%);
+    color: #ffffff;
+    padding: 0.95rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.3);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-agende-consulta:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
 /* ================= CONTATO ================= */
 .contato {
     padding: 5rem 1.5rem;
@@ -560,6 +685,11 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
+    .funcionamento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -651,6 +781,21 @@ body {
 
     .especialidade-card {
         padding: 2rem 1.25rem 1.75rem;
+    }
+
+    .funcionamento-wrapper {
+        padding: 2rem 1.25rem;
+    }
+
+    .funcionamento-card {
+        padding: 1.5rem 1.25rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-agende-consulta {
+        width: 100%;
+        justify-content: center;
     }
 
     .footer-container {
