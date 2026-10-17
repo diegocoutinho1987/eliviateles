@@ -392,6 +392,7 @@ body {
 }
 
 .depoimentos-google-titulo {
+    font-family: Montserrat, sans-serif;
     text-align: center;
     font-size: clamp(1.8rem, 3.2vw, 2.3rem);
     color: var(--roxo-principal);
